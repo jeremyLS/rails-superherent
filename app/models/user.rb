@@ -7,3 +7,4 @@ class User < ApplicationRecord
   has_many :bookings, foreign_key: :renter_id
   has_many :superheroes, foreign_key: :owner_id
 end
+
