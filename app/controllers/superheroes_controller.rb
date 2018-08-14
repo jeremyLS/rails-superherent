@@ -1,5 +1,5 @@
 class SuperheroesController < ApplicationController
   def show
-    @superhero = Superhero.new
+    @superhero = Superhero.find(params[:id])
   end
 end
