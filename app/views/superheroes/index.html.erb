@@ -1,22 +1,21 @@
 <div class="wrapper-grey">
-  <div class="header-index">
-    <h1>All Supers</h1>
-    <p>Find the best Super for your daily needs ! </p>
-  </div>
   <div class="content">
     <div class="cards-container">
       <div class="row">
+        <div class="page-header">
+          <h1>All Supers <i class="fas fa-bolt"></i> <small>Find the best Super for your daily needs ! </small></h1>
+        </div>
         <% @superheroes.each do |superhero| %>
           <div class="col-xs-12">
             <div class="card">
-              <div class="card-image" style="background-image: '<%=cl_image_path superhero.photo %>' ">
+              <div class="card-image" style="background-image: url('<%=cl_image_path superhero.photo, height: 150 %>')" >
               </div>
               <div class="card-content">
-                <h3><%= superhero.name.capitalize %></h3>
+                <h3><%= link_to superhero.name.capitalize , superhero_path(superhero) %></h3>
                 <p><i class="fas fa-map-marker-alt"></i> <%= superhero.address %></p>
                 <div class="card-content-bottom">
                   <span class="label label-default"><%= superhero.power.capitalize %></span>
-                  <%= link_to "Discover powers", superhero_path(superhero)  %>
+                  <span class="label label-danger"><%= link_to "Discover", superhero_path(superhero), class: "access-show" %></span>
                 </div>
               </div>
               <div class="card-infos">
