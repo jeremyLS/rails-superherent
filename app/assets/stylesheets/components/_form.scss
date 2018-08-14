@@ -1,0 +1,46 @@
+#user_remember_me {
+  margin-right: 10px;
+}
+
+.form-content {
+  margin: 20px 50px;
+}
+
+.form-content-link {
+  margin: 10px auto;
+}
+
+.form-content-link a {
+  color: #cccccc;
+  font-weight: lighter;
+  &:hover {
+    text-decoration: none;
+    color: #F3752B;
+    transition: 0.5s;
+  }
+}
+
+.form-img-sessions {
+  background-image: linear-gradient(-225deg, rgba(0,89,127,0.3) 0%, rgba(0,36,61,0.3) 50%), url('http://cdn.atomix.vg/wp-content/uploads/2017/07/MarvelHeroes.jpg');
+  background-size: cover !important;
+  background-position: center;
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+}
+
+.form-img-registrations {
+  position: relative;
+  height: calc(100vh - 70px);
+  background-image: linear-gradient(-225deg, rgba(0,89,127,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://www.stageusa.fr/wp-content/uploads/2017/11/super-h%C3%A9ro-am%C3%A9ricain.jpg');
+  background-size: cover !important;
+  background-position: center;
+}
+
+.form-img-lost-password {
+  background-image: linear-gradient(-225deg, rgba(0,55,87,0.2) 0%, rgba(0,36,50,0.2) 50%), url('http://www.leconciergemarketing.com/wp-content/uploads/Commandite_hero.jpg');
+  background-size: cover !important;
+  background-position: center;
+  top: 70px !important;
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+}
