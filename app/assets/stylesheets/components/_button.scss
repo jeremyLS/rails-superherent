@@ -1,0 +1,22 @@
+
+.btn-super {
+  color: white;
+  padding: 6px 10px;
+  border-radius: 50px;
+  font-weight: bold;
+  background: transparent;
+  transition: background 0.5s ease;
+  display: inline-block;
+  justify-content:flex-end;
+  align-items:center;
+  cursor: pointer;
+  float:right;
+  margin-top: none;
+}
+.btn-super:hover {
+  opacity: 1;
+  background: $blue;
+  text-decoration: none;
+  color: white;
+}
+
