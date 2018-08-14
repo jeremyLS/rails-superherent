@@ -6,9 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [ :new, :create ]
   end
 
-  resources :bookings, only: [ :new, :create, :index ]
-
-  resources :users, only: [ :new, :create ]
+  resources :bookings, only: [ :index ]
 
   namespace :owner do
     resources :superheroes, only: [ :new, :create, :index ]
@@ -19,27 +17,3 @@ Rails.application.routes.draw do
   end
 
 end
-
-
-## SUPERHEROES
-# - get index
-# - get show
-
-## OWNER/SUPERHEROES
-# - get new
-# - post create
-# - get index
-
-## BOOKINGS
-# - get new
-# - post create
-# - get index
-
-## OWNER/BOOKINGS
-# - get index
-# - patch validate
-# - patch decline
-
-## USERS
-# - get new
-# - post create
