@@ -1,6 +1,8 @@
 // Import your components CSS files here.
 @import "alert";
 @import "navbar";
+@import "form";
+@import "body";
 @import "banner";
 @import "button";
 @import "footer";
@@ -83,5 +85,3 @@ $steps: 25;
     }
 
 }
-
-
