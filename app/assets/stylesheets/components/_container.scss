@@ -23,15 +23,16 @@
 
 .container-bookings-message-name {
   padding: 5px;
-  margin: 0;
+  margin-left: 20px;
 }
 
 .container-bookings-message-name h5 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .container-bookings-message-name p {
   margin-top: 0;
+  margin-bottom: 0;
   color: black;
   font-weight: lighter;
   font-size: 12px;
@@ -41,6 +42,7 @@
   padding: 0 10px;
   flex: 1 0 30%;
   font-size: 13px;
+  margin-left: 20px;
 }
 
 .container-bookings-message-price {
@@ -50,6 +52,7 @@
 }
 
 .container-bookings-price p{
+  text-align: center;
   color: #5b5b5b;
 }
 
