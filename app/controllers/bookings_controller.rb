@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
+  # before_action :set_user, only: [:index]
   def index
+    @current_user = current_user
+    @bookings = Booking.all.where(renter: @current_user)
   end
 
 
@@ -51,6 +54,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:purpose, :start_date, :end_date)
   end
-
 end
-
