@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all.where(renter: @current_user)
   end
 
-
   def new
     @superhero  = Superhero.find(params[:superhero_id])
     @booking = Booking.new
