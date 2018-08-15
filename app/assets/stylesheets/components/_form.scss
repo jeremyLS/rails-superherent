@@ -64,3 +64,13 @@
   align-items: center;
   // border-color: $blue;
 }
+// ------------------------------------  HERO CREATION FORM ----------------------------------------------------------------------
+
+#superhero_good.form-check-input {
+  margin-right: 15px;
+}
+
+#superhero_photo {
+  display: flex;
+  justify-content: space-between;
+}
