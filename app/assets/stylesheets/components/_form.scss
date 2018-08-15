@@ -44,3 +44,18 @@
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
 }
+
+// ------------------------------------  HERO CREATION FORM ----------------------------------------------------------------------
+
+#superhero_good.form-check-input {
+  margin-right: 15px;
+}
+
+#superhero_photo {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
