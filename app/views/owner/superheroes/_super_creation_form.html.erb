@@ -1,4 +1,5 @@
-<%= simple_form_for(@superhero) do |f| %>
+<%= simple_form_for(["owner", @superhero]) do |f| %>
+  <%= f.error_notification %>
   <%= f.input :name, label: "Enter your Hero name" %>
   <%= f.input :address, label: "Which address is he/she living?" %>
   <%= f.input :power, label: "What is his/her main power?" %>
