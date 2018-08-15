@@ -10,5 +10,4 @@ class SuperheroesControllerTest < ActionDispatch::IntegrationTest
     get superheroes_index_url
     assert_response :success
   end
-
 end
