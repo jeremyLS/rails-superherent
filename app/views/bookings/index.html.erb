@@ -1,0 +1,26 @@
+ <div class="tabs">
+    <%= link_to 'My Bookings', bookings_path, class:'tabs active' %>
+    <a href="#" class="tab">My Super Heroes</a>
+    <a href="#" class="tab">Validations</a>
+  </div>
+
+  <ul class="container-bookings-inbox">
+    <% @bookings.each do |booking| %>
+      <li class="container-bookings-message" style="border-bottom: 1px solid #d5d7d5;">
+        <%= cl_image_tag booking.superhero.photo, height: 45, width: 45, crop: :fill, class:'container-bookings-message-img' %>
+        <div class="container-bookings-message-name">
+          <h5><%= booking.superhero.name %></h5>
+          <p><%= booking.start_date %></p>
+        </div>
+        <div class="container-bookings-message-info hidden-xs hidden-sm">
+          Purpose : <%= booking.purpose %>
+        </div>
+        <div class="container-bookings-message-price">
+          <div class="container-bookings-price">
+            <%= booking.status %>
+            <p><%= booking.total_price %> €</p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
