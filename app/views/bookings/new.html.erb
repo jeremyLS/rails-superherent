@@ -1,0 +1,64 @@
+<!-- <div class="container" style="height:90vh;"> -->
+  <%= simple_form_for [@superhero, @booking] do |f| %>
+
+
+<div class="container" style="height:90vh;">
+  <div class="row results">
+    <div class="col-xs-12 col-md-7   ">
+
+
+
+      <div class="col-md-1 owner-avatar">
+        <%= cl_image_tag @superhero.owner.photo, height: 48, width: 48, class: "avatar-large" %>
+      </div>
+      <div class="col-md-10 owner-info" style="margin-left: 20px ">
+        <h4>Send message to <%=@superhero.owner.name %></h4>
+        <p>Since <%= current_user.created_at.strftime("%d.%m.%y") %></p>
+      </div>
+
+
+       <div class="col-xs-12">
+            <div class="card">
+              <div class="card-image" style="background-image: url('<%=cl_image_path @superhero.photo, height: 150 %>')" >
+              </div>
+              <div class="card-content">
+                <h3><%= link_to @superhero.name.capitalize , superhero_path(@superhero) %></h3>
+                <p><i class="fas fa-map-marker-alt"></i> <%= @superhero.address %></p>
+                <div class="card-content-bottom">
+                  <span class="label label-default"><%= @superhero.power.capitalize %></span>
+                  <span class="label label-danger"><%= link_to "Back to superhero", superhero_path(@superhero), class: "access-show" %></span>
+                </div>
+              </div>
+              <div class="card-infos">
+                <h4><%= @superhero.daily_price %> €/day</h4>
+              </div>
+            </div>
+          </div>
+
+      <div class="col-xs-12 col-md-10 description">
+
+        <%= f.input :purpose, placeholder: "Send message to owner."%>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4 col-md-offset-1">
+        <div class="col-xs-10">
+          <div class="form-control form-input text-input" style="padding-top: 12px; margin-bottom:12px;"><%= @superhero.power %></div>
+        </div>
+        <div class="col-xs-10">
+          <div class="form-control form-input text-input" style="padding-top: 12px; margin-bottom:12px;"><%= @superhero.address %></div>
+        </div>
+
+        <div class="col-xs-8">
+          <input type="text" name="start_date" class="form-control form-input text-input datepicker" data-provide='datepicker' placeholder="Start">
+        </div>
+        <div class="col-xs-8">
+          <input class="form-control form-input text-input datepicker" data-provide='datepicker' name='booking[end_date]' placeholder="End">
+        </div>
+        <div class="col-xs-8">
+          <%= f.submit 'GO', class: 'btn-go' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
