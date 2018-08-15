@@ -6,4 +6,8 @@ class SuperheroesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get index" do
+    get superheroes_index_url
+    assert_response :success
+  end
 end

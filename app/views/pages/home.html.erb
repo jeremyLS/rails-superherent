@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+</head>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(50,101,168,0.6) 20%, rgba(0,36,61,0.6) 40%), url('https://wab.org/wp-content/uploads/2018/01/superheroes.jpg');">
+ <div class="banner-content text-center">
+  <h1 class="glitch" data-text="Superherent">Superherent</h1>
+   <!--  <h1>Superherent </h1> -->
+
+
+  <div class="container">
+
+    <form action="/superheroes" method="get" class="form-inline" style="margin-top: 6vh;" %>
+
+      <!-- ville -->
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control form-input text-input" name="city" placeholder="Choose your city">
+      </div>
+      <!-- Date -->
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" name="start_date" class="form-control form-input text-input datepicker" data-provide='datepicker' placeholder="Start">
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" name="end_date" class="form-control form-input text-input datepicker" data-provide='datepicker' placeholder="End">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+
+        <button type="submit" class="btn-super"><i class="fas fa-search"></i></button>
+      </div>
+      <br>
+   </form>
+
+  </div>
+ </div>
+</div>
+
+
+
