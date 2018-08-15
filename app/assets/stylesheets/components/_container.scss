@@ -1,0 +1,63 @@
+.container-bookings-inbox {
+  margin: 0;
+  padding-left: 0px;
+  list-style: none;
+  border: 1px solid #d5d7d5;
+}
+
+.container-bookings-message {
+  /* Your turn to design a flexbox message */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 0 20px;
+}
+
+.container-bookings-message-img {
+  margin: 0 5px;
+  border-radius: 50px;
+  width: 45px;
+  justify-content: space-around;
+}
+
+.container-bookings-message-name {
+  padding: 5px;
+  margin: 0;
+}
+
+.container-bookings-message-name h5 {
+  margin-bottom: 5px;
+}
+
+.container-bookings-message-name p {
+  margin-top: 0;
+  color: black;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.container-bookings-message-info {
+  padding: 0 10px;
+  flex: 1 0 30%;
+  font-size: 13px;
+}
+
+.container-bookings-message-price {
+  font-weight: lighter;
+  font-size: 15px;
+  padding: 0 5px;
+}
+
+.container-bookings-price p{
+  color: #5b5b5b;
+}
+
+// .container-bookings-price-accepted {
+//   color: #0E7E12;
+// }
+
+// .container-bookings-price-pending {
+//   color: #EBEBEB;
+// }
+
