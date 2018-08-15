@@ -1,0 +1,11 @@
+<%= simple_form_for(@superhero) do |f| %>
+  <%= f.input :name, label: "Enter your Hero name" %>
+  <%= f.input :address, label: "Which address is he/she living?" %>
+  <%= f.input :power, label: "What is his/her main power?" %>
+  <%= f.input :description, label: "Enter a brief description of your Hero" %>
+  <%= f.input :good, label: "Is your Hero Good ?" %>
+  <%= f.input :photo, label: "Upload a nice picture of your Hero", class: "superhero-photo-upload" %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.input :daily_price, label: "What's his/her daily price?" %>
+  <%= f.button :submit, class: "btn btn-danger" %>
+<% end %>
