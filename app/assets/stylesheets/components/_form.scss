@@ -45,6 +45,25 @@
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
 }
 
+.date-input {
+  width: 308px;
+}
+
+.form-tamere {
+  padding: 10px 30px;
+  font-weight: bold;
+  justify-content: flex-end;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.maman {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // border-color: $blue;
+}
 // ------------------------------------  HERO CREATION FORM ----------------------------------------------------------------------
 
 #superhero_good.form-check-input {
@@ -55,7 +74,3 @@
   display: flex;
   justify-content: space-between;
 }
-
-
-
-

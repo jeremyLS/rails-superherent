@@ -12,43 +12,43 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params_with_parsed_dates)
+    @booking = Booking.new(booking_params)
 
-    @superhero             = Superhero.find(params[:superhero_id])
+    @superhero         = Superhero.find(params[:superhero_id])
+    @renter = current_user
     @booking.superhero = @superhero
+    @booking.renter = @renter
 
-    number_of_days = (@booking.end_date - @booking.start_date).to_i
+    # number_of_days = (@booking.end_date - @booking.start_date).to_i
 
-    total_price = number_of_days * @superhero.price
+    # total_price = number_of_days * @superhero.price
 
-    @booking.total_price = total_price
+    # @booking.total_price = total_price
 
-    @booking.user = current_user
-
+    # @booking.user = current_user
 
     if @booking.save
-      redirect_to profile_path
+      redirect_to bookings_path
     else
       render :new
     end
-
   end
 
   private
 
   def booking_params_with_parsed_dates
-    params            = booking_params
-    start_date_string = params.delete(:start_date)
-    end_date_string   = params.delete(:end_date)
+    # params            = booking_params
+    # start_date_string = params.delete(:start_date)
+    # end_date_string   = params.delete(:end_date)
 
-    start_date = Date.strptime(start_date_string, "%m/%d/%Y")
-    end_date   = Date.strptime(end_date_string, "%m/%d/%Y")
+    # start_date = Date.strptime(start_date_string, "%m/%d/%Y")
+    # end_date   = Date.strptime(end_date_string, "%m/%d/%Y")
 
 
-    params[:start_date] = start_date
-    params[:end_date]   = end_date
+    # params[:start_date] = start_date
+    # params[:end_date]   = end_date
 
-    return params
+    # return params
   end
 
   def booking_params

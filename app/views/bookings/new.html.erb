@@ -1,17 +1,19 @@
 <!-- <div class="container" style="height:90vh;"> -->
   <%= simple_form_for [@superhero, @booking] do |f| %>
+  <%= f.error_notification %>
 
 
 <div class="container" style="height:90vh;">
-  <div class="row results">
-    <div class="col-xs-12 col-md-7   ">
+  <div class="row">
+
+    <div class="col-xs-12 col-md-7" style="margin-top: 100px">
 
 
 
       <div class="col-md-1 owner-avatar">
         <%= cl_image_tag @superhero.owner.photo, height: 48, width: 48, class: "avatar-large" %>
       </div>
-      <div class="col-md-10 owner-info" style="margin-left: 20px ">
+      <div class="col-md-10 owner-info" style="margin-left: 0px">
         <h4>Send message to <%=@superhero.owner.name %></h4>
         <p>Since <%= current_user.created_at.strftime("%d.%m.%y") %></p>
       </div>
@@ -35,28 +37,27 @@
             </div>
           </div>
 
-      <div class="col-xs-12 col-md-10 description">
-
-        <%= f.input :purpose, placeholder: "Send message to owner."%>
-      </div>
+        <div class="col-xs-12 description" style="margin: 10px">
+          <%= f.input :purpose, placeholder: "Send message to owner."%>
+        </div>
     </div>
 
-    <div class="col-xs-12 col-md-4 col-md-offset-1">
+    <div class="col-xs-12 col-md-4 col-md-offset-1 maman" style="margin-top: 150px">
         <div class="col-xs-10">
-          <div class="form-control form-input text-input" style="padding-top: 12px; margin-bottom:12px;"><%= @superhero.power %></div>
+          <div class="form-tamere" style="padding-top: 12px; margin-bottom:12px;"><%= @superhero.power.capitalize %></div>
         </div>
-        <div class="col-xs-10">
-          <div class="form-control form-input text-input" style="padding-top: 12px; margin-bottom:12px;"><%= @superhero.address %></div>
+        <div class="col-xs-10" style="margin-bottom: 10px">
+          <div class="form-tamere" style="padding-top: 12px; margin-bottom:12px;"><%= @superhero.address %></div>
         </div>
 
-        <div class="col-xs-8">
-          <input type="text" name="start_date" class="form-control form-input text-input datepicker" data-provide='datepicker' placeholder="Start">
+        <div class="date-input" style="margin-bottom: 10px" >
+          <input type="text" name="booking[start_date]" class="form-control form-input text-input datepicker" data-provide='datepicker' placeholder="Start">
         </div>
-        <div class="col-xs-8">
+        <div class="date-input" style="margin-bottom: 10px">
           <input class="form-control form-input text-input datepicker" data-provide='datepicker' name='booking[end_date]' placeholder="End">
         </div>
-        <div class="col-xs-8">
-          <%= f.submit 'GO', class: 'btn-go' %>
+        <div class="text-center">
+          <%= f.submit 'GO', class: 'btn-go text-center' %>
         </div>
       </div>
     </div>
