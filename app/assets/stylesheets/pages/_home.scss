@@ -1,1 +1,108 @@
 // Specific CSS for your home-page
+header {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+
+header:before {
+  background: linear-gradient(-225deg, rgba(50,101,168,0.6) 20%, rgba(0,36,61,0.6) 40%), url('https://wab.org/wp-content/uploads/2018/01/superheroes.jpg');
+  background-size: cover;
+  background-position: center;
+  content: "";
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  z-index: -1;
+}
+
+header:after {
+  background: #F9FCFF;
+  content: "";
+  height: 40rem;
+  left: -5%;
+  position: absolute;
+}
+
+.header-title, .header-subtitle {
+  color: #fff;
+}
+
+.header-subtitle {
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+
+.header-button {
+  transform: translateZ(.1px);
+  position: relative;
+  z-index: 10;
+}
+
+.search-module {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0px;
+}
+
+
+.search-bar {
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+#search-bar-index {
+  margin-left: none;
+  border-radius: 4px;
+}
+
+.animate-pop-in {
+  animation: pop-in .6s ease-out forwards;
+  opacity: 0;
+}
+
+.rocky-dashed {
+  animation-delay: 1s;
+}
+
+.header-title {
+  animation-delay: 1.2s;
+}
+
+.header-subtitle {
+  animation-delay: 1.4s;
+}
+
+.header-button {
+  animation-delay: 1.6s;
+}
+
+#index-go {
+  color: $blue;
+  background-color: transparent;
+  transition: 0.4s;
+  &:hover {
+    background-color: $yellow;
+  }
+}
+
+/* Animations */
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

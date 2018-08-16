@@ -11,11 +11,13 @@
 @import "footer";
 @import "container";
 @import "tabs";
+@import "booking_box";
+@import "map-index";
 
 .form-control {
   // color: white;
   padding: 10px 30px;
-  border-rad1us: 2px;
+  border-radius: 2px;
   font-weight: bold;
   display: inline-block;
   justify-content:flex-end;
