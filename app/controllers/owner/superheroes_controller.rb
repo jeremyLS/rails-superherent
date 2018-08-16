@@ -1,6 +1,6 @@
 class Owner::SuperheroesController < ApplicationController
   def index
-
+    @superheroes = Superhero.all.where(owner: current_user)
   end
 
   def new

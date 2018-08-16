@@ -4,7 +4,8 @@ class BookingsController < ApplicationController
 
   def index
     @current_user = current_user
-    @bookings = Booking.all.where(renter: @current_user)
+    @bookings = Booking.all.where(renter: @current_user).reverse
+    @pending_request = Booking.all.where(status: 'pending').count
   end
 
   def new
