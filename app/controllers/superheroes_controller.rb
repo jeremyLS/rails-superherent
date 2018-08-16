@@ -6,9 +6,17 @@ class SuperheroesController < ApplicationController
 
   def index
     if params[:query].present?
-      @superheroes = Superhero.where("address ILIKE ?", "%#{params[:query]}%")
+      @superheroes = Superhero.near(params[:query], 20)
     else
-      @superheroes = Superhero.all
+      @superheroes = Superhero.where.not(latitude: nil, longitude: nil)
+    end
+
+    @markers = @superheroes.map do |superhero|
+      {
+        lat: superhero.latitude,
+        lng: superhero.longitude,
+        infoWindow: { content: render_to_string(partial: "superheroes/map_box", locals: { superhero: superhero }) }
+      }
     end
   end
 end
