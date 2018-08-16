@@ -6,7 +6,7 @@ class Owner::BookingsController < ApplicationController
 
     @owner.superheroes.each do |superhero|
       superhero.bookings.each do |booking|
-        @bookings << booking if booking.status.nil?
+        @bookings << booking if booking.status == "pending"
       end
     end
   end
