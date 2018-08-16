@@ -20,7 +20,7 @@ class Owner::BookingsController < ApplicationController
 
   def decline
     booking = Booking.find(params[:id])
-    booking.status = 'delined'
+    booking.status = 'declined'
     booking.save
     redirect_to owner_bookings_path
   end
