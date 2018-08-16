@@ -6,7 +6,7 @@ class Owner::BookingsController < ApplicationController
 
     @owner.superheroes.each do |superhero|
       superhero.bookings.each do |booking|
-        @bookings << booking
+        @bookings << booking if booking.status.nil?
       end
     end
   end
@@ -22,6 +22,7 @@ class Owner::BookingsController < ApplicationController
     booking = Booking.find(params[:id])
     booking.status = 'delined'
     booking.save
+    redirect_to owner_bookings_path
   end
 
   private
