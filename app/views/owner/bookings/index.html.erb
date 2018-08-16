@@ -1,6 +1,34 @@
-<h1><%= @owner.name %> </h1>
+ <div class="tabs">
+    <%= link_to 'My Bookings', bookings_path %>
+    <a href="#" class="tab">My Super Heroes</a>
+    <%= link_to 'Validation', owner_bookings_path, class:'tabs active'  %>
+  </div>
 
-
-<% @bookings.each do |booking| %>
-  <h2><%= booking.superhero.name %></h2>
-<% end %>
+<div class="container owner-validation">
+  <h1>DashBoard</h1>
+    <% if @bookings = [] %>
+      <%= "You have no reservation yet" %>
+    <% else %>
+      <% @bookings.each do |booking| %>
+        <div class="card-owner">
+          <%= cl_image_tag booking.renter.photo, height: 75, width: 75, crop: :fill, class: 'avatar-medium' %>
+          <p class="flex-body">
+            <%= booking.renter.name.capitalize %> wants to rent <%= booking.superhero.name %> for "<%= booking.purpose %>"
+          </p>
+          <div class="row">
+            <div class="col-xs-6">
+              <%= link_to validate_owner_booking_path(booking), method: :patch do %>
+                <div class="btn btn-valid btn-success"><i class="fa fa-check"></i></div>
+              <% end %>
+            </div>
+            <div class="col-xs-6">
+              <%= link_to decline_owner_booking_path(booking), method: :patch do %>
+                <div class="btn btn-valid btn-danger"><i class="fa fa-times"></i>
+              <% end %>
+             </div>
+           </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

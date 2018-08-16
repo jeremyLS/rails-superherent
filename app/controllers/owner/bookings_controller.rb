@@ -10,6 +10,27 @@ class Owner::BookingsController < ApplicationController
       end
     end
   end
+
+  def validate
+    booking = Booking.find(params[:id])
+    booking.status = 'accepted'
+    booking.save
+    redirect_to owner_bookings_path
+  end
+
+  def decline
+    booking = Booking.find(params[:id])
+    booking.status = 'delined'
+    booking.save
+  end
+
+  private
+
+  def bookings_params
+    params.require(:booking).permit(:id)
+  end
+
 end
+
 
 
