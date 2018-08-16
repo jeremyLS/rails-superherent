@@ -27,7 +27,8 @@
                 <h3><%= link_to @superhero.name.capitalize , superhero_path(@superhero) %></h3>
                 <p><i class="fas fa-map-marker-alt"></i> <%= @superhero.address %></p>
                 <div class="card-content-bottom">
-                  <span class="label label-default"><%= @superhero.power.capitalize %></span>
+                  <p><i class="fab fa-superpowers"></i><%= @superhero.power.capitalize %></p>
+
                 </div>
               </div>
               <div class="card-infos">
