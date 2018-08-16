@@ -69,3 +69,13 @@
   box-shadow: .5px .5px 10px rgba(180, 180, 180, .4);
   padding: 30px 30px;
 }
+// ------------------------------------  HERO CREATION FORM ----------------------------------------------------------------------
+
+#superhero_good.form-check-input {
+  margin-right: 15px;
+}
+
+#superhero_photo {
+  display: flex;
+  justify-content: space-between;
+}
