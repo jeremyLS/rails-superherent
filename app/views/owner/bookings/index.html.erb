@@ -6,7 +6,7 @@
 
 <div class="container owner-validation">
   <h1>DashBoard</h1>
-    <% if @bookings = [] %>
+    <% if @bookings == [] %>
       <%= "You have no reservation yet" %>
     <% else %>
       <% @bookings.each do |booking| %>
