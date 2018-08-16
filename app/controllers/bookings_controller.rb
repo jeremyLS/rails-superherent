@@ -8,7 +8,6 @@ class BookingsController < ApplicationController
     @pending_request = Booking.all.where(status: 'pending').count
   end
 
-
   def new
     @booking = Booking.new
   end
