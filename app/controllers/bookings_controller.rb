@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all.where(renter: @current_user)
   end
 
-
   def new
     @booking = Booking.new
   end
