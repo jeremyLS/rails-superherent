@@ -1,32 +1,32 @@
- <div class="tabs">
-    <%= link_to 'My Bookings', bookings_path, class:'tabs active' %>
-    <a href="#" class="tab">My Super Heroes</a>
-    <a href="#" class="tab">Validations</a>
-  </div>
+<div class="tabs">
+  <%= link_to 'My Bookings', bookings_path, class:'tabs active' %>
+  <%= link_to 'My Super Heros', owner_superheroes_path %>
+  <a href="#" class="tab">Validations</a>
+</div>
 
-  <div class="container">
-    <h1>DashBoard</h1>
-    <h3 style="padding-bottom: 25px";>My Bookings</h3>
-    <ul class="container-bookings-inbox">
-      <% @bookings.each do |booking| %>
-        <li class="container-bookings-message" style="border-bottom: 1px solid #d5d7d5;">
-          <%= cl_image_tag booking.superhero.photo, height: 45, width: 45, crop: :fill, class:'container-bookings-message-img' %>
-          <div class="container-bookings-message-name">
-            <h5><%= booking.superhero.name %></h5>
-            <p>Started : <%= booking.start_date.strftime("%d/%m/%Y") %></p>
-            <p>Ended : <%= booking.end_date.strftime("%d/%m/%Y") %></p>
-            <p><%= (booking.end_date - booking.start_date).to_i %> days</p>
+<div class="container-bookings">
+  <h2>DashBoard</h2>
+  <h4 style="padding-bottom: 25px; font-weight: lighter ";><%= @pending_request %> pending request(s)</h4>
+  <ul class="container-bookings-inbox">
+    <% @bookings.each do |booking| %>
+      <li class="container-bookings-message" style="border-bottom: 1px solid #d5d7d5;">
+        <%= cl_image_tag booking.superhero.photo, height: 45, width: 45, crop: :fill, class:'container-bookings-message-img' %>
+        <div class="container-bookings-message-name">
+          <h5><%= booking.superhero.name %></h5>
+          <p>Started : <%= booking.start_date.strftime("%d/%m/%Y") %></p>
+          <p>Ended : <%= booking.end_date.strftime("%d/%m/%Y") %></p>
+          <p><%= (booking.end_date - booking.start_date + 1).to_i %> days</p>
+        </div>
+        <div class="container-bookings-message-info hidden-xs hidden-sm">
+          <p><%= booking.purpose %></p>
+        </div>
+        <div class="container-bookings-message-price">
+          <div class="container-bookings-price">
+            <%= booking.status %>
+            <p><%= booking.total_price %> €</p>
           </div>
-          <div class="container-bookings-message-info hidden-xs hidden-sm">
-            <p><%= booking.purpose %></p>
-          </div>
-          <div class="container-bookings-message-price">
-            <div class="container-bookings-price">
-              <%= booking.status %>
-              <p><%= booking.total_price %> €</p>
-            </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

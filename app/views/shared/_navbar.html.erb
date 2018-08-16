@@ -23,14 +23,14 @@
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
-            <li>
+            <!-- <li>
               <%= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
-            </li>
+            </li> -->
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
@@ -47,7 +47,6 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Dashboard</a></li>
         <li><a href="#">New hero</a></li>
         <li><a href="#">Reservations</a></li>
       </ul>

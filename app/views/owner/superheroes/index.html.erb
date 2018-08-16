@@ -1,0 +1,30 @@
+<div class="tabs">
+    <%= link_to 'My Bookings', bookings_path %>
+    <%= link_to 'My Super Heros', '#', class:'tabs active' %>
+    <%= link_to 'My Validations', '#' %>
+  </div>
+
+  <div class="container-bookings">
+    <h2>DashBoard</h2>
+    <h4 style="padding-bottom: 25px; font-weight: lighter";>You own <%= @superheroes.count %> Super Heroes</h4>
+    <ul class="container-bookings-inbox">
+      <% @superheroes.each do |superhero| %>
+        <li class="container-bookings-message" style="border-bottom: 1px solid #d5d7d5;">
+          <%= cl_image_tag superhero.photo, height: 45, width: 45, crop: :fill, class:'container-bookings-message-img' %>
+          <div class="container-bookings-message-name">
+            <h5><%= superhero.name %></h5>
+
+          </div>
+          <div class="container-bookings-message-info hidden-xs hidden-sm">
+            <p><%= superhero.description %></p>
+          </div>
+          <div class="container-bookings-message-price">
+            <div class="container-bookings-price">
+              <p><%= superhero.daily_price %> €</p>
+              <p>per day</p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
