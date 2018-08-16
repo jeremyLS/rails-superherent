@@ -5,11 +5,14 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 3px;
-  border: 1px solid rgba(230, 230, 230, .4);
   box-shadow: .5px .5px 10px rgba(180, 180, 180, .4);
+  // border: 1px solid rgba(230, 230, 230, .4);
   transition: 0.4s;
+  &:hover{
+    background-color: #EEF0F2;
+    transition: 0.8s;
+  }
 }
-
 
 .card-image {
   flex: 0 0 30%;
@@ -26,11 +29,35 @@
     margin: 0 0;
   }
   p {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   a {
     text-decoration: none;
   }
+}
+
+.card-content p i {
+  margin-right: 10px;
+}
+
+.card-content-bottom ul li {
+  list-style: none;
+  margin-left: 0;
+}
+
+.card-content-bottom ul li i {
+  margin-right: 10px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
 }
 
 .page-header {

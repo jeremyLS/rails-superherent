@@ -8,19 +8,18 @@
         <% @superheroes.each do |superhero| %>
           <div class="col-xs-12">
             <div class="card">
-              <div class="card-image" style="background-image: url('<%=cl_image_path superhero.photo, height: 150 %>')" >
-              </div>
-              <div class="card-content">
-                <h3><%= link_to superhero.name.capitalize , superhero_path(superhero) %></h3>
-                <p><i class="fas fa-map-marker-alt"></i> <%= superhero.address %></p>
-                <div class="card-content-bottom">
-                  <span class="label label-default"><%= superhero.power.capitalize %></span>
-                  <span class="label label-danger"><%= link_to "Discover", superhero_path(superhero), class: "access-show" %></span>
-                </div>
+              <div class="card-image" style="border-radius: 3px; background-image: url('<%=cl_image_path superhero.photo, height: 150 %>')"></div>
+              <div class="card-content" style="font-weight: lighter">
+                <h3 style="margin-bottom: 10px;"><%= superhero.name.capitalize %></h3>
+                <p><i class="fas fa-map-marker-alt"></i><%= superhero.address %></p>
+                <p><i class="fab fa-superpowers"></i><%= superhero.power.capitalize %></p>
+                <!-- <span class="label label-default"></span> -->
               </div>
               <div class="card-infos">
-                <h4><%= superhero.daily_price %> €/day</h4>
+                <h4 style="text-align: center; font-weight:bold;"><%= superhero.daily_price %> €</h4>
+                <p style="font-weight: lighter;">per day</p>
               </div>
+              <%= link_to '', superhero_path(superhero), class:'card-link' %>
             </div>
           </div>
         <% end %>
