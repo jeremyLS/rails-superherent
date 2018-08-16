@@ -14,8 +14,8 @@ class SuperheroesController < ApplicationController
     @markers = @superheroes.map do |superhero|
       {
         lat: superhero.latitude,
-        lng: superhero.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/superheroes/map_box", locals: { flat: flat }) }
+        lng: superhero.longitude,
+        infoWindow: { content: render_to_string(partial: "superheroes/map_box", locals: { superhero: superhero }) }
       }
     end
   end

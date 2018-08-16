@@ -1,0 +1,6 @@
+<div class="text-center" style="padding: 5px 25px 20px 25px; margin-left: 10px;">
+  <h3 style="margin-left: none;"><%= superhero.name %></h3>
+  <p style="margin-left: none;"><i class="fab fa-superpowers"></i> <span style="font-weight: bold;"><%= superhero.power %></span></p>
+  <p style="margin-left: none;"><span style="font-weight: bold;"><%= superhero.daily_price %> €</span> <span>per day</span></p>
+  <%= link_to "Book it", new_superhero_booking_path(superhero),class: "btn-go" %>
+</div>
