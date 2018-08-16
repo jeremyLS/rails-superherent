@@ -28,11 +28,11 @@
                 <p><i class="fas fa-map-marker-alt"></i> <%= @superhero.address %></p>
                 <div class="card-content-bottom">
                   <span class="label label-default"><%= @superhero.power.capitalize %></span>
-                  <span class="label label-danger"><%= link_to "Back to superhero", superhero_path(@superhero), class: "access-show" %></span>
                 </div>
               </div>
               <div class="card-infos">
-                <h4><%= @superhero.daily_price %> €/day</h4>
+                <h4 style="text-align: center; font-weight:bold;"><%= @superhero.daily_price %> €</h4>
+                <p style="font-weight: lighter;">per day</p>
               </div>
             </div>
           </div>
