@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   def index
     @current_user = current_user
     @bookings = Booking.all.where(renter: @current_user).reverse
-    @pending_request = Booking.all.where(status: 'pending').count
+    @pending_request = set_pending_request(@bookings)
   end
 
   def new
@@ -13,14 +13,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @renter = current_user
-    @booking.superhero = @superhero
-    @booking.renter = @renter
-
-    @rent_length = (@booking.end_date - @booking.start_date + 1).to_i
-
-    @booking.end_date == @booking.start_date ? @booking.total_price = @superhero.daily_price : @booking.total_price = @superhero.daily_price * @rent_length
+    @booking             = Booking.new(booking_params)
+    @renter              = current_user
+    @booking.superhero   = @superhero
+    @booking.renter      = @renter
+    @rent_length         = set_rent_length(@booking)
+    @booking_total_price = set_booking_total_price(@booking)
 
     if @booking.save
       redirect_to bookings_path
@@ -39,4 +37,25 @@ class BookingsController < ApplicationController
     @superhero = Superhero.find(params[:superhero_id])
   end
 
+  def set_pending_request(bookings)
+    i = 0
+    bookings.each do |booking|
+      if booking.status == 'pending'
+        i += 1
+      end
+    end
+    return i
+  end
+
+  def set_rent_length(booking)
+    return (booking.end_date - booking.start_date + 1).to_i
+  end
+
+  def set_booking_total_price(booking)
+    if booking.end_date == @booking.start_date
+      booking.total_price = @superhero.daily_price
+    else
+      booking.total_price = @superhero.daily_price * @rent_length
+    end
+  end
 end

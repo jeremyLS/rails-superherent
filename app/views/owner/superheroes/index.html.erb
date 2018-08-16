@@ -6,7 +6,7 @@
 
   <div class="container-bookings">
     <h2>DashBoard</h2>
-    <h4 style="padding-bottom: 25px; font-weight: lighter";>You own <%= @superheroes.count %> Super Heroes</h4>
+    <h4 style="padding-bottom: 25px; font-weight: lighter";><%= @superheroes.count %> Super Hero(es)</h4>
     <ul class="container-bookings-inbox">
       <% @superheroes.each do |superhero| %>
         <li class="container-bookings-message" style="border-bottom: 1px solid #d5d7d5;">
