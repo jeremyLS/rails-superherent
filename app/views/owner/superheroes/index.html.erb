@@ -22,6 +22,10 @@
             <div class="container-bookings-price">
               <p><%= superhero.daily_price %> €</p>
               <p>per day</p>
+              <button type="button" data-toggle="modal" data-target=<%= "#myModal-#{superhero.id}" %> >
+                <i class="fas fa-edit"></i>
+              </button>
+              <%= render 'edit_superhero_modal', superhero: superhero %>
             </div>
           </div>
         </li>

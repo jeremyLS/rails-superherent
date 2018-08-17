@@ -1,15 +1,15 @@
-<div class="banner-show" style="background-image: url('<%= @superhero.photo %>')">
+<div class="banner-show" style="background-image: url('<%= @superhero.photo %>')" data-aos="zoom-in" data-aos-duration="100000">
     <h1 class="banner-h1"><%= @superhero.name %></h1>
 </div>
 
-<div class="container container-show">
+<div class="container container-show" data-aos="zoom-in" data-aos-duration="100000">
   <div class="row">
     <div class="col-xs-12 col-md-8">
         <h4 style="text-align: center; font-weight:bold; margin-top: 80px;"> Description</h4>
-      <div class="card-description card">
+      <div class="card-description card grow">
         <p class="hero-description"><%= @superhero.description %></p>
       </div>
-      <div class="skills card">
+      <div class="skills card grow">
         <div> <strong>Power :</strong> <%= @superhero.power %> </div>
         <div> <strong>Address :</strong> <%= @superhero.address %> </div>
 
