@@ -17,10 +17,12 @@ class BookingsController < ApplicationController
     @renter              = current_user
     @booking.superhero   = @superhero
     @booking.renter      = @renter
-    @rent_length         = set_rent_length(@booking)
-    @booking_total_price = set_booking_total_price(@booking)
 
-    if @booking.save
+    if @booking.valid?
+      @rent_length = set_rent_length(@booking)
+      set_booking_total_price(@booking)
+      @booking.save
+
       redirect_to bookings_path
     else
       render :new
