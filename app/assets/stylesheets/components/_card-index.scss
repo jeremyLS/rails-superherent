@@ -9,11 +9,12 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 3px;
+  margin-left: 50px;
   box-shadow: .5px .5px 10px rgba(180, 180, 180, .4);
   // border: 1px solid rgba(230, 230, 230, .4);
   transition: 0.4s;
   &:hover{
-    background-color: #EEF0F2;
+    // background-color: #EEF0F2;
     transition: 0.8s;
   }
 }
@@ -23,7 +24,7 @@
   height: 150px;
   background-size: cover;
   background-position: center;
-  margin: 5px;
+  // margin: 5px;
 }
 
 .card-content {
