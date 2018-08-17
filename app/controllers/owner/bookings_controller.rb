@@ -16,6 +16,10 @@ class Owner::BookingsController < ApplicationController
     booking.status = 'accepted'
     booking.save
     redirect_to owner_bookings_path
+    # respond_to do |format|
+    #   format.html { redirect_to owner_bookings_path }
+    #   format.js
+    # end
   end
 
   def decline
@@ -23,6 +27,10 @@ class Owner::BookingsController < ApplicationController
     booking.status = 'declined'
     booking.save
     redirect_to owner_bookings_path
+    # respond_to do |format|
+    #   format.html { redirect_to owner_bookings_path }
+    #   format.js
+    # end
   end
 
   private

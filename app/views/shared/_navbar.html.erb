@@ -19,11 +19,11 @@
         <div class="dropdown">
           <%= cl_image_tag current_user.photo, height: 100, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
+            <!-- <li>
               <%= link_to bookings_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
-            </li>
+            </li> -->
             <!-- <li>
               <%= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
@@ -50,6 +50,11 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to "Dashboard", bookings_path %></li>
         <li><%= link_to "New hero", new_owner_superhero_path %></li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
         <li>
           <%= link_to superheroes_path do %>
             <i class="fas fa-search"></i>
