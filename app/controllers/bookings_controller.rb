@@ -15,8 +15,8 @@ class BookingsController < ApplicationController
   def create
     @booking             = Booking.new(booking_params)
     @renter              = current_user
-    @booking.superhero   = @superhero
     @booking.renter      = @renter
+    @booking.superhero   = @superhero
 
     if @booking.valid?
       @rent_length = set_rent_length(@booking)
@@ -54,7 +54,7 @@ class BookingsController < ApplicationController
   end
 
   def set_booking_total_price(booking)
-    if booking.end_date == @booking.start_date
+    if booking.end_date == booking.start_date
       booking.total_price = @superhero.daily_price
     else
       booking.total_price = @superhero.daily_price * @rent_length
