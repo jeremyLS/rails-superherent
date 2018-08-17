@@ -19,6 +19,19 @@ class Owner::SuperheroesController < ApplicationController
     end
   end
 
+  def update
+    @superhero = Superhero.find(params[:id])
+    @superhero.update(owner_superhero_params)
+    @superheroes = Superhero.all.where(owner: current_user)
+
+
+    if @superhero.save
+      redirect_to owner_superheroes_path
+    else
+      render 'index'
+    end
+  end
+
   private
 
   def owner_superhero_params

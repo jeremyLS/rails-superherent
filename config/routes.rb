@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :index ]
 
   namespace :owner do
-    resources :superheroes, only: [ :new, :create, :index ]
+    resources :superheroes, only: [ :new, :create, :index, :edit, :update ]
     resources :bookings, only: [ :index ] do
       member do
         patch :validate
